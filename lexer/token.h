@@ -1,6 +1,6 @@
 #ifndef TOKEN_H
 #define TOKEN_H
-
+#include<iostream>
 #include<string>
 
 enum class TokenType{
@@ -11,7 +11,7 @@ enum class TokenType{
     For_kw,
     Return_kw,
     Function_kw,
-    Var_kw,
+    // Var_kw,
     Const_kw,
 
     // Operators
@@ -34,7 +34,7 @@ enum class TokenType{
 
     // Comment
     Comment,
-    
+
     // Literals
     Int_lit,
     Float_lit,
@@ -53,10 +53,10 @@ enum class TokenType{
 class Token{
 public:
     TokenType type;
-    std::string lexeme;
-
+    std::string value;
     Token(TokenType type, const std::string& value = "")
-        : type(type), lexeme(value) {}
+        : type(type), value(value) {// std::cout<<"\nToken Constructor called\n";
+        }
 
 };
 #endif // TOKEN_H
